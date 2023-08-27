@@ -12,7 +12,7 @@ pipeline {
         stage('Build.............') {
             steps {
                 echo 'Building..'
-				bat 'cd kafka_zookeeper && docker-compose --file kafka_zookeeperdocker-compose-kafka-zookeeper.yaml up -d'
+				sh 'cd kafka_zookeeper && docker-compose --file kafka_zookeeperdocker-compose-kafka-zookeeper.yaml up -d'
             }
         }
         stage('Test......') {
