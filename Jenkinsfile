@@ -6,18 +6,20 @@ pipeline {
 		
             steps {
                 git branch: 'main', credentialsId: 'ba283931-f9ad-4318-a410-a2dcfb4e08f0', url: 'https://github.com/brgurur/ashish_devops_project.git'
-				bat 'python test.py'
-            }
+			}
         
 		}
-        stage('Build') {
+        stage('Build.............') {
             steps {
                 echo 'Building..'
+				bat 'cd kafka_zookeeper && docker-compose --file kafka_zookeeperdocker-compose-kafka-zookeeper.yaml up -d'
             }
         }
-        stage('Test') {
+        stage('Test......') {
             steps {
                 echo 'Testing..'
+				bat 'docker images'
+				bat 'docker ps -a'
             }
         }
         stage('Deploy') {
