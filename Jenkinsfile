@@ -13,8 +13,7 @@ pipeline {
             steps {
                 echo 'Building..'
 				sh "docker version" 
-				//sh "docker-compose version" 
-				//sh "cd kafka_zookeeper && docker-compose --file kafka_zookeeperdocker-compose-kafka-zookeeper.yaml up -d"
+				
             }
         }
         stage('Test......') {
